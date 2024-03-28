@@ -1,0 +1,10 @@
+.songComponent {
+  padding: 20px;
+  box-shadow: inset 0 0 5px 5px rgb(134, 120, 98);
+  background-image: linear-gradient(
+    to top right,
+    #fdfdfd 40%,
+    #22cb00 50%,
+    #ffffff 90%
+  );
+}

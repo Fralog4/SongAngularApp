@@ -1,0 +1,12 @@
+<div class="song-list">
+  <h3>Song List</h3>
+  <div *ngFor="let songItem of songService.songs; let i = index">
+    <app-song
+      [song]="songItem"
+      (Like)="onLikeSongReceived($event)"
+      (deleteSong)="onDeleteReceived($event)"
+      (editSong)="onEditReceived($event)"
+    ></app-song>
+    <p>indice {{ i }}</p>
+  </div>
+</div>

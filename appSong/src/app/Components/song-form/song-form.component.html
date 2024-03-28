@@ -1,0 +1,80 @@
+<form #f="ngForm" (ngSubmit)="submitForm(f)">
+  <div>
+    <label for="Title">Song Name </label>
+    <input
+      class="form-control"
+      type="text"
+      name="songTitle"
+      [(ngModel)]="formData.songTitle"
+      required
+    />
+    <div
+      *ngIf="
+        (f.controls.songTitle?.touched || f.submitted) &&
+        f.controls.songTitle?.errors?.required
+      "
+    >
+      Campo obbligatorio.
+    </div>
+  </div>
+  <div>
+    <label for="id">Artist*</label>
+    <input
+      class="form-control"
+      type="text"
+      name="Artist"
+      [(ngModel)]="formData.songArtist"
+      required
+    />
+    <div
+      *ngIf="
+        (f.controls.songGenre?.touched || f.submitted) &&
+        f.controls.songGenre?.errors?.required
+      "
+    >
+      Campo obbligatorio.
+    </div>
+  </div>
+
+  <div>
+    <label for="id">Song Duration *</label>
+    <input
+      class="form-control"
+      type="number"
+      name="duration"
+      [(ngModel)]="formData.songDuration"
+      required
+    />
+    <div
+      *ngIf="
+        (f.controls.songDuration?.touched || f.submitted) &&
+        f.controls.songDuration?.errors?.required
+      "
+    >
+      Campo obbligatorio.
+    </div>
+  </div>
+  <div>
+    <label for="songGenre">Genre </label>
+    <select
+      name="songGenre"
+      class="form-select"
+      [(ngModel)]="formData.songGenre"
+      required
+    >
+      <option value="" disabled selected>Choose your Genre</option>
+      <option *ngFor="let songGenre of songGenre" [ngValue]="songGenre">
+        {{ songGenre }}
+      </option>
+    </select>
+    <div
+      *ngIf="
+        (f.controls.songGenre?.touched || f.submitted) &&
+        f.controls.songGenre.errors?.required
+      "
+    >
+      Campo obbligatorio.
+    </div>
+  </div>
+  <button type="submit" [disabled]="!f.valid">SUBMIT</button>
+</form>

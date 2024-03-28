@@ -1,0 +1,13 @@
+<div class="songComponent">
+  <h3>Song Component</h3>
+  <p>id: {{ song.id }}</p>
+  <p>title: {{ song.title }}</p>
+  <p>artist: {{ song.artist }}</p>
+  <p>duration: {{ song.duration }}</p>
+  <p>genre:{{ song.genre }}</p>
+  <p>createdDate:{{ song.createdDate | date }}</p>
+  <!--<p>lastModifiedDate: {{ song.lastModifiedDate}}</p>-->
+  <button class="btn btn-primary" (click)="onLike()">Like</button>
+  <button class="btn btn-danger" (click)="onDeleteSong()">Delete</button>
+  <button class="btn btn-success" (click)="onEditSong()">Edit</button>
+</div>

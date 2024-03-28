@@ -1,0 +1,15 @@
+<div class="song-filter">
+  <h3>Title</h3>
+  <!-- <div *ngFor="let songItem of songService.songs; let i = index">
+    <app-song
+      [song]="songItem"
+      (Filter)="onFilterSongByGenre($event)"
+    ></app-song>
+    <ng-container *ngIf="songItem.songGenre == 'POP'">
+      <p>Title: {{ songItem.songTitle }}</p>
+    </ng-container>
+  </div> -->
+  <div *ngFor="let songItem of songsFiltered; let i = index">
+    <p>title: {{ songItem.title }}</p>
+  </div>
+</div>
